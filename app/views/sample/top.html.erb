@@ -1,0 +1,21 @@
+<!--本来はこのビューはReact想定-->
+
+<h1>トップページ</h1>
+
+<button onclick="openWindow()">ポップアップを開く</button>
+
+<script>
+
+  function openWindow() {
+      const width = 500
+      const height = 400
+      const left = window.screenX + (window.outerWidth - width) / 2
+      const top = window.screenY + (window.outerHeight - height) / 2.5
+
+      window.open(
+          "/foo", // 3Dセキュア用のHTMLを埋め込んだテンプレートを返すエンドポイント
+          "_blank",
+          `width=${width},height=${height},left=${left},top=${top}`
+      )
+  }
+</script>
